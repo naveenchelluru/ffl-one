@@ -1,273 +1,114 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .container{
-    min-height: 10%;
-    padding:10% 20% 10% 10%;
-  }
-  .container2{
-    height: 200px;
-    background-color: blueviolet;
-    border-radius: 20px;
-    padding:5px;
-    margin-bottom: 5px;
-  }
-  .topnav {
-    overflow: hidden;
-    width: 100%;
-    background-color: #333;
-    position: fixed;
-  }
-  label .logo{
-   
-    color: white;
-    padding: 0 400px;
-    line-height: 80px;
-    margin-right: 0%;
-    width : 5%;
-    height :100%;
-    
-    border-radius: 50%;
-}
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 17px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    transition: 3s;
-    border-radius: 5px;
-  }
-  
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .topnav .icon {
-    display: none;
-  }
-  backimg{
-    width: 100%;
-    height:100vh;
-    background: url("https://th.bing.com/th/id/OIP.ly0dvEfXeDRKmZPgC60_5QHaE6?w=268&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7");
-    background-repeat: no-repeat;
-   
-    background-size: cover;
-    background-position: center;
-  }
-  aside{
-    background-color: gray;
-    position: fixed;
-    width: 600px;
-    height: 100%;
-    top: 60px;
-    right: 10px;
-    bottom: 10px;
-    
-    box-sizing: border-box;
-    
-  }
-  
-    
-      
-  
-  .right{
-    position:absolute;
-    top:60%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:100%;
-    padding:0 20px;
-    text-align:center;
-    }
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 
-  .right .btn{
-    margin-top:60px;
-    }
-    .right .btn button{
-    height:60px;
-    width:200px;
-    border-radius:10px;
-    border:none;
-    margin:0 10px;
-    font-size:30px;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    }
-    .right .btn button:first-child{
-    color:orange;
-    background:rgb(23, 71, 87);
-    
-    }
-    .right .btn button:first-child:hover{
-    color:orange;
-    background:rgb(23, 79, 87);
-    
-    }
-    
-    .right .btn button:last-child{
-    color:skyblue;
-    background:rgb(0, 128, 2);
-   
-    }
-    .right .btn button:last-child:hover{
-    color:orange;
-    background:rgb(23, 71, 87);
-    
-    }
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
-      color: black;
-    }
-    .topnav {
-        overflow: hidden;
-        width: 100%;
-        background-color: white;
-        position: fixed;
+}
+body{
+  font-family: montserrat;
+}
+nav{
+  height: 60px;
+  background-color: #0082e6;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 60px;
+  padding :0 100px;
+  font-weight: bold;
+
+}
+
+nav ul{
+  float:right;
+  margin-right: 60px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding-right: 10px;
+}
+
+a:active,a:hover{
+  background-color:#0a3a5f ;
+  
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color:white;
+  float: right;
+  line-height: 60px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+display: none;
+}
+
+@media (max-width:952px) {
+  
+  label.logo{
+      font-size: 30px;
+      padding-left: 50px;
   }
-  .topnav a{
-    color: #333;
+  nav ul li a{
+      font-size: 16px;
   }
 }
+@media (max-width:858px) {
   
-  @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
+  .checkbtn{
       display: block;
-      text-align: left;
-    }
-    aside{
-        background-color: white;
-        position: fixed;
-        width: 50%;
-        height: 100%;
-       top: 50px;
-        right: 0px;
-        box-sizing: border-box;
-        
-      }
-      .right{
-        position:absolute;
-        top:60%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        width:100%;
-        padding:0 10px;
-        text-align:center;
-        }
-    
-      .right .btn{
-        margin-top:60px;
-        }
-        .right .btn button{
-        height:45px;
-        width:200px;
-        border-radius:10px;
-        border:none;
-        margin:0 10px;
-        font-size:20px;
-        cursor:pointer;
-        transition:all 0.3s ease;
-        }
-        .right .btn button:first-child{
-        color:orange;
-        background:rgb(23, 71, 87);
-        padding: 0 5px;
-        }
-        .right .btn button:first-child:hover{
-        color:orange;
-        background:rgb(23, 79, 87);
-        padding: 0 5px;
-        }
-        
-        .right .btn button:last-child{
-        color:skyblue;
-        background:rgb(0, 128, 2);
-        height: 40;
-        }
-        .right .btn button:last-child:hover{
-        color:orange;
-        background:rgb(23, 71, 87);
-        height: 40;
-        }
-        
   }
-  @media screen and (min-width: 600px) {
-    aside{
-        background-color: #333;
-        position: fixed;
-        width: 50%;
-        height: 100%;
-       top: 50px;
-        right: 0px;
-        box-sizing: border-box;
-        
-      }
-      .right{
-        position:absolute;
-        top:60%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        width:100%;
-        padding:0 5px;
-        text-align:center;
-        }
-    
-      .right .btn{
-        margin-top:60px;
-        }
-        .right .btn button{
-        height:60px;
-        width:200px;
-        border-radius:10px;
-        border:none;
-        margin:0 10px;
-        font-size:30px;
-        cursor:pointer;
-        transition:all 0.3s ease;
-        }
-        .right .btn button:first-child{
-        color:orange;
-        background:rgb(23, 71, 87);
-        
-        }
-        .right .btn button:first-child:hover{
-        color:orange;
-        background:rgb(23, 79, 87);
-        
-        }
-        
-        .right .btn button:last-child{
-        color:skyblue;
-        background:rgb(0, 128, 2);
-        
-    }
-       
-    .right .btn button:last-child:hover{
-        color:orange;
-        background:rgb(23, 71, 87);
-        
-        }
 
+  ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background:#2c3e50 ;
+      top: 60px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
   }
-  
+  nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+  }
+  nav ul li a{
+      font-size: 20px;
+  }
+  a:hover,a.active{
+      background: none;
+      color: #0082e6;
+  }
+  #check:checked ~ ul{
+      left: 0;
+  }
+}
+.container{
+background: #000; color: aquamarine;
+background-image: url(https://assets.atdw-online.com.au/images/a11021df8ac18bcfc096922562e5b24f.jpeg?rect=222);
+background-repeat: no-repeat;
+background-size: cover;
+ padding: 20px 10% 0 10%;
+  height: calc(100vh - 80px);
+}
+.container2{
+  padding: 20px 10% 20px 10%;
+  margin-bottom: 10px;
+  background-color: yelo;
+}

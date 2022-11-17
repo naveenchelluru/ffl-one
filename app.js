@@ -12,23 +12,41 @@ app.listen(3000,()=>{
     console.log("Server is running successfully");
 })
 
-const userSchema=mongoose.Schema({name:String,content:String});
+const userSchema=mongoose.Schema({name:String,content:String,loaded:String});
 
 const user=new mongoose.model("user",userSchema);
-const cursor = user.find().cursor();
-const names=[];
-const content=[];
-cursor.forEach((element)=>{
-    names.push(element.name)
-    content.push(element.content)
-})
+const today=new Date();
+const app1=today.toDateString();
+const dog=new mongoose.model("man",userSchema);
+const man1=new dog({name:"krishna",content:"the true Teacher",loaded:app1})
+  man1.save()
 
-app.get("/",(req,res)=>{
-    const name="Naveen"
-    const stream=['naveen','pavan']
-    res.render("home",{User:name,stream:names,content:content});
+const cursor = dog.find({loaded:app1}).cursor();
+ let n=[]
+ let c=[]
+ cursor.forEach((element)=>{
+    console.log(element.name);
+    n.push(element.name)
+    c.push(element.content)
+  })
+ 
+  
+ app.get("/",(req,res)=>{
+
+  
+   res.render("home",{User:"Naveen",stream:n,content:c})
 })
 
 app.get("/about",(req,res)=>{
     res.render("about");
+});
+app.get("/feedback",(req,res)=>{
+  res.render("feedback");
+})
+app.get("/contact",(req,res)=>{
+  res.render("contact");
+})
+
+app.post("/",(req,res)=>{
+  
 })
