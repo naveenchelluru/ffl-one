@@ -15,16 +15,18 @@ app.listen(3000,()=>{
 const userSchema=mongoose.Schema({name:String,content:String});
 
 const user=new mongoose.model("user",userSchema);
-const cursor = user.find();
-
-cursor.forEach((element)=>{console.log(element.name);})
-
-
+const cursor = user.find().cursor();
+const names=[];
+const content=[];
+cursor.forEach((element)=>{
+    names.push(element.name)
+    content.push(element.content)
+})
 
 app.get("/",(req,res)=>{
     const name="Naveen"
     const stream=['naveen','pavan']
-    res.render("home",{User:name,stream:stream});
+    res.render("home",{User:name,stream:names,content:content});
 })
 
 app.get("/about",(req,res)=>{
