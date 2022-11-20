@@ -7,13 +7,13 @@
     <%- include('partials/header')  %> 
     <main>
         <div class="container">
-            <h1><%= User %></h1>
-       <% for(var i=0;i<stream.length;i++){ %>
+            
+       <% stream.forEach((stream)=>{ %>
             <div class="container2">
-            <h1><%= stream[i] %></h1>
-               <p><%= content[i]%></p>
+            <h1><%= stream.name %></h1>
+               <p><%= stream.content%></p>
            </div>
-      <% } %> 
+      <% }) %> 
         </div>
     </main>
     

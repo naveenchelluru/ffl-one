@@ -104,11 +104,11 @@ background: #000; color: aquamarine;
 background-image: url(https://assets.atdw-online.com.au/images/a11021df8ac18bcfc096922562e5b24f.jpeg?rect=222);
 background-repeat: no-repeat;
 background-size: cover;
- padding: 20px 10% 0 10%;
+padding: 20px 10px 0 10px;
   height: calc(100vh - 80px);
 }
 .container2{
-  padding: 20px 10% 20px 10%;
+  margin: 20px 10% 20px 30px;
   margin-bottom: 10px;
   background-color: yelo;
 }

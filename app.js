@@ -18,35 +18,51 @@ const user=new mongoose.model("user",userSchema);
 const today=new Date();
 const app1=today.toDateString();
 const dog=new mongoose.model("man",userSchema);
-const man1=new dog({name:"krishna",content:"the true Teacher",loaded:app1})
-  man1.save()
 
-const cursor = dog.find({loaded:app1}).cursor();
- let n=[]
- let c=[]
- cursor.forEach((element)=>{
-    console.log(element.name);
-    n.push(element.name)
-    c.push(element.content)
+app.route("/").get((req,res)=>{
+  user.find((err,sol)=>{
+    res.render("home",{stream:sol})
+    console.log(sol.length);
   })
- 
-  
- app.get("/",(req,res)=>{
+ })
+ .post((req,res)=>{
+  const name=req.body.title
+  const content=req.body.content
+  const man1=new dog({name:"krishna",content:"the true Teacher",loaded:app1})
+  man1.save()
+ })
 
-  
-   res.render("home",{User:"Naveen",stream:n,content:c})
+ app.route("/about")
+ .get((req,res)=>{
+  res.render("about");
 })
+.post((req,res)=>{
 
-app.get("/about",(req,res)=>{
-    res.render("about");
-});
-app.get("/feedback",(req,res)=>{
-  res.render("feedback");
-})
-app.get("/contact",(req,res)=>{
-  res.render("contact");
 })
 
-app.post("/",(req,res)=>{
-  
+app.route("/feedback")
+.get((req,res)=>{
+res.send("feedback")
 })
+.post((req,res)=>{
+
+})
+
+app.route("/contact")
+.get((req,res)=>{
+res.send("contact")
+})
+.post((req,res)=>{
+
+})
+
+app.route("/services")
+.get((req,res)=>{
+res.send("services")
+})
+.post((req,res)=>{
+
+})
+
+
+
