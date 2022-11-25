@@ -1,19 +1,20 @@
 <html>
 <head>
     <%- include('partials/head')  %> 
-    
+    <title>FFL Home</title>    
 </head>
 <body>
     <%- include('partials/header')  %> 
     <main>
         <div class="container">
-            
-       <% stream.forEach((stream)=>{ %>
+            <h1>Do you have any new story!<a href="/newfeed">Upload here.</a></h1>
+           <center> <h1><%= para  %> </h1></center>
+       <% for(var i=stream.length-1;i>=0;i--){ %>
             <div class="container2">
-            <h1><%= stream.name %></h1>
-               <p><%= stream.content%></p>
+            <h1><%= stream[i].name %></h1>
+               <p><%= stream[i].content%></p>
            </div>
-      <% }) %> 
+      <% } %> 
         </div>
     </main>
     

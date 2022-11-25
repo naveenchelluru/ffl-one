@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/feedbk.css">
+    <script src="https://kit.fontawesome.com/962dbfdde8.js" crossorigin="anonymous"></script>  
+    <title>FeedBack FFl</title>
+    <style>
+        .button {
+  background-color: #1579d6; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  font-size: 16px;
+  }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function rating() {
+        document.getElementById("rating").innerHTML="good"
+    }
+    function rating1() {
+        document.getElementById("rating").innerHTML="Bad"
+    }
+</script>
+        </head>
+        <body>
+    
+        <div class=" container">
+          
+         <b class="a"><label for="">Give your response</label></b><br>
+         <label for="rating">Rating:</label><input type="number" name="rating" id="" placeholder="1-10"><br>
+         <b class="b"> Add a comment about the Quality of support you received </b><br><br>
+         <form action="/feedback" method="post">
+            <p name="rating" id="rating"></p>
+            <textarea rows = "8" cols = "60" name = "description" value="" aria-placeholder="Give your response">
+               
+             </textarea><br>
+             <button type="submit" class="button">submit</button>
+            </form>
+         </div>  
+         
+        </body>
+    </html>

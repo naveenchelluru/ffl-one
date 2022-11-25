@@ -98,17 +98,31 @@ display: none;
   #check:checked ~ ul{
       left: 0;
   }
-}
-.container{
-background: #000; color: aquamarine;
-background-image: url(https://assets.atdw-online.com.au/images/a11021df8ac18bcfc096922562e5b24f.jpeg?rect=222);
-background-repeat: no-repeat;
+  .container{
+ color: rgb(12, 12, 12);
 background-size: cover;
 padding: 20px 10px 0 10px;
   height: calc(100vh - 80px);
 }
+  .container2{
+  margin: 10px 10px 10px 10px ;
+  margin-bottom:0 10px;
+  box-sizing: border-box;
+  }		
+}
+.container{
+background-repeat: no-repeat;
+background-size: cover;
+padding: 10px 40px 0 40px;
+  min-height: calc(100vh - 80px);
+}
 .container2{
-  margin: 20px 10% 20px 30px;
-  margin-bottom: 10px;
-  background-color: yelo;
+    position:relative;
+    min-height:100px;
+    border-radius: 25px;
+    padding: 25px;
+    box-sizing:border-box;
+    background:white;
+    border: 5px solid #DCCBDC ;
+    margin-bottom: 10px;
 }
