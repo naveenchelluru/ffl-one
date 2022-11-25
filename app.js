@@ -7,11 +7,16 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set('view engine','ejs');
 
-mongoose.connect("mongodb://localhost:27017/aits")
-app.listen(3000,()=>{
+
+let port=process.env.PORT;
+if(port==null||port=="")
+{
+  port=3000;
+}
+mongoose.connect("mongodb+srv://naveenMongodb:naveen99@cluster0.hlyje66.mongodb.net/ffldb")
+app.listen(port,()=>{
     console.log("Server is running successfully");
 })
-
 
 //data schema
 const userSchema=mongoose.Schema({name:{type:String,required:true},content:{type:String,required:true},loaded:String});
@@ -21,7 +26,7 @@ const today=new Date();
 const days=today.toDateString();
 
 //feed back schema
-const feedSchema=mongoose.Schema({rating:{type:Number,required:true},opinion:String,loaded:String})
+const feedSchema=mongoose.Schema({rating:{type:Number,required:true},opinion:String,loaded:String,day:Date})
 
 const feedBack=new mongoose.model("feedback",feedSchema)
 // home page
@@ -59,7 +64,7 @@ app.route("/newfeed")
  {
   if(story)
   {
-    const newUser=new user({name:title,content:story,loaded:days})
+    const newUser=new user({name:title,content:story,loaded:days,day:Date})
     newUser.save((err)=>{
       if(err){
         res.send(err)
@@ -68,6 +73,8 @@ app.route("/newfeed")
       }
     })
   }
+ }else{
+  res.redirect("/")
  }
 })
 
@@ -83,10 +90,16 @@ res.render("feedback")
     console.log(rating,opinion);
     if(rating){
       if(opinion){
-        const feedbacks=new feedBack({rating:rating,opinion:opinion,loaded:days})
-        feedbacks.save((err)=>{
-          res.render("home",{stream:sol,para:"Thank You for submitting your feedback"})
-        })
+        const feedback1=new feedBack({rating:rating,opinion:opinion,loaded:days})
+        feedback1.save((err)=>{
+if (err) {
+  res.send(err)
+} else {
+  res.redirect("/")
+}        })
+      }
+      else{
+        res.send("<h1>Please try again</h1>")
       }
     }
   } catch (error) {
