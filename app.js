@@ -6,15 +6,14 @@ const app=express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set('view engine','ejs');
+require('dotenv').config()
 
+const pn=process.env.PASSCODE;
 
-let port=process.env.PORT;
-if(port==null||port=="")
-{
-  port=3000;
-}
-mongoose.connect("mongodb+srv://naveenMongodb:naveen99@cluster0.hlyje66.mongodb.net/ffldb")
-app.listen(port,()=>{
+let PORT=process.env.port||3000;
+
+mongoose.connect("mongodb+srv://naveenMongodb:"+pn+"@cluster0.hlyje66.mongodb.net/ffldb")
+app.listen(PORT,()=>{
     console.log("Server is running successfully");
 })
 
@@ -81,13 +80,13 @@ app.route("/newfeed")
 //Feedback route
 app.route("/feedback")
 .get((req,res)=>{
-res.render("feedback")
+res.render("feedback",{eree:" "})
 })
 .post((req,res)=>{
   try {
     const rating=req.body.rating
     const opinion=req.body.description
-    console.log(rating,opinion);
+    
     if(rating){
       if(opinion){
         const feedback1=new feedBack({rating:rating,opinion:opinion,loaded:days})
@@ -101,6 +100,9 @@ if (err) {
       else{
         res.send("<h1>Please try again</h1>")
       }
+    }
+    else{
+      res.render("feedback",{eree:"Please fill the fields"})
     }
   } catch (error) {
     res.send(error)

@@ -34,11 +34,11 @@
         <div class=" container">
           
          <b class="a"><label for="">Give your response</label></b><br>
-         <label for="rating">Rating:</label><input type="number" name="rating" id="" placeholder="1-10"><br>
+         <h1><%= eree %> </h1>
          <b class="b"> Add a comment about the Quality of support you received </b><br><br>
          <form action="/feedback" method="post">
-            <p name="rating" id="rating"></p>
-            <textarea rows = "8" cols = "60" name = "description" value="" aria-placeholder="Give your response">
+            <label for="rating">Rating:</label><input type="number" name="rating" id="" placeholder="1-10" required><br>
+            <label for="">comment</label><textarea rows = "8" cols = "60" name = "description" value="" aria-placeholder="Give your response" required>
                
              </textarea><br>
              <button type="submit" class="button">submit</button>

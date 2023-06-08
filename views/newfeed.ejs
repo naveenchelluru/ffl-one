@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Feed</title>
+    <title>New Feed | FFL</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
@@ -47,10 +47,10 @@ button {
 <body>
 <div class="wrapper">
    <form action="/newfeed" method="post">
-    <label for="title"><h1>Title: </h1></label> <input type="text" name="title" id="" maxlength="20">
+    <label for="title"><h1>Title: </h1></label> <input type="text" name="title" id="" maxlength="20" required>
     <label for="story"><h1>Tell us your story:</h1></label>
 
-<textarea id="story" name="story" rows="10" cols="33">
+<textarea id="story" name="story" rows="10" cols="33" required>
 
 </textarea>
 <center><button type="submit"> Post</button></center>
