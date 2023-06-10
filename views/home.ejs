@@ -6,7 +6,7 @@
 <body>
     <%- include('partials/header')  %> 
     <main>
-        <div class="container">
+        <div class="container" id="container">
             <h1>Do you have any new story!<a href="/newfeed">Upload here.</a></h1>
            <center> <h1><%= para  %> </h1></center>
            <div class="container2">
@@ -17,12 +17,22 @@
            </div>
        <% for(var i=stream.length-1;i>=0;i--){ %>
             <div class="container2">
-            <h1><%= stream[i].name %></h1>
+           <label>Email</label> <h3><%= stream[i].name %></h3>
                <p><%= stream[i].content%></p>
            </div>
       <% } %> 
         </div>
     </main>
+    <script>
+         document.getElementById("checkbtn").onclick = function() {
+           var x= document.getElementById("container") ;
+           if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+        }
+    </script>
     
 </body>
 </html>

@@ -31,7 +31,7 @@
      font-size:20px;
      border:none;
   
-     trasition:all 0.3s ease;
+     transition:all 0.3s ease;
    }
    .d{
       color: black;
@@ -42,7 +42,7 @@
      border:none;
      height: 45px;
   
-     trasition:all 0.3s ease;
+     transition:all 0.3s ease;
    }
    .container1{
       position:relative;
@@ -91,7 +91,7 @@
                      font-size:20px;
                      border:none;
                   padding: 2%;
-                     trasition:all 0.3s ease;
+                     transition:all 0.3s ease;
                    }
                    .d{
                       color: black;
@@ -102,7 +102,7 @@
                      border:none;
                      height: 50px;
                      padding: 2%;
-                     trasition:all 0.3s ease;
+                     transition:all 0.3s ease;
                    }
                    textarea
       {
