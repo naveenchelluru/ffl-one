@@ -12,7 +12,7 @@ const pn=process.env.PASSCODE;
 
 let PORT=process.env.port||3000;
 
-mongoose.connect("mongodb+srv://naveenMongodb:"+pn+"@cluster0.hlyje66.mongodb.net/ffldb")
+mongoose.connect(pn)
 app.listen(PORT,()=>{
     console.log("Server is running successfully");
 })
@@ -54,7 +54,7 @@ app.route("/").get((req,res)=>{
 
 app.route("/newfeed")
 .get((req,res)=>{
-  res.render("newfeed")
+  res.render("newfeed1")
 })
 .post((req,res)=>{
   const title=req.body.title;

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <%- include('partials/head')  %> 
+</head>
+<body>
+    <%- include('partials/header')  %> 
+    <main>
+       <div class="container">
+        <h1>
+           <div class="newfeed1">
+            <form action="/newfeed" method="post">
+                <div class="feedele">
+                    <label for="email">Email:</label>
+                    <input type="email" name="title" id="email"  required>
+                </div>
+                <div class="feedele">
+                    <label for="skills">Skills:</label>
+                   <textarea name="story" id="" cols="21" required></textarea>
+                </div>
+                <div>
+
+           <div class="feedele">
+            <center>
+                <button type="submit">Submit</button>
+               </center>
+           </div>
+
+                   
+                </div>
+            </form>
+           </div>
+        </h1>
+       </div>
+    </main>
+    
+</body>
+</html>
