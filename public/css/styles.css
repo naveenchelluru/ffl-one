@@ -144,6 +144,22 @@ background-size: cover;
 padding: 10px 40px 0 40px;
   min-height: calc(100vh - 80px);
 }
+.container2 label{
+  font-size: 20px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.container2  a:link{
+  color:rgb(255, 187, 0);
+font-size: 20px;
+}
+.container2 li{
+  text-transform: uppercase;
+
+}
+#capitall{
+  text-transform: uppercase;
+}
 .container2{
     position:relative;
     min-height:100px;
