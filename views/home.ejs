@@ -18,7 +18,7 @@
        <% for(var i=stream.length-1;i>=0;i--){ %>
             <div class="container2">
            <label>Email:</label>
-           <a href="mailto:"+<%= stream[i].name %>> <%= stream[i].name %></a>
+           <a href=mailto:<%= stream[i].name %>?subject=I%20would%20like%20to%20%learn> <%= stream[i].name %></a>
            <br>
               <label>Skills:</label><div id="capitall">
                 <%= stream[i].content%>
